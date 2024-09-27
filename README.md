@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Quiz Interativo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**GitHub:** [Projeto Quiz Interativo](https://github.com/evicsss/Atividade03-iTalents)
 
-## Available Scripts
+## Estrutura do Projeto
+O projeto consiste nos seguintes componentes principais:
 
-In the project directory, you can run:
+### 1. App
+Componente raiz que gerencia o estado do quiz e a lógica de navegação entre perguntas.
 
-### `npm start`
+### 2. QuestionComponent
+Exibe a pergunta atual e as opções de resposta, recebendo props para a pergunta e uma função para manipular as respostas.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 3. ResultComponent
+Mostra a pontuação final e um feedback baseado no desempenho do usuário, recebendo props com a pontuação e o número total de perguntas.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 4. QuizData
+Um arquivo que contém um array de objetos, cada um representando uma pergunta com opções.
 
-### `npm test`
+## Comunicação entre os Componentes
+A comunicação entre os componentes é feita através de props:
+- **App** passa a pergunta atual e a função `handleAnswer` para o `QuestionComponent`.
+- O `QuestionComponent` chama `handleAnswer` ao selecionar uma resposta, informando se a resposta está correta ou não.
+- Quando todas as perguntas são respondidas, o **App** passa a pontuação acumulada e o total de perguntas para o `ResultComponent`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Uso de Props e Children
+### Props
+- Props são usadas para passar dados de um componente pai para um componente filho.
+- Exemplo: no **App**, usamos `setCurrentQuestion` e `score` como props para o `QuestionComponent`.
 
-### `npm run build`
+### Children
+- Utilizei o `children` dentro do `QuestionComponent` para incluir uma mensagem extra, "Pense bem antes de responder!". Isso permite adicionar conteúdo de forma dinâmica e flexível, enriquecendo a interação.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Funcionamento do Formulário
+O processo de seleção de respostas funciona como um formulário:
+- Quando o usuário clica em uma opção, a função `handleAnswer` é chamada, verificando se a resposta está correta e avançando para a próxima pergunta ou exibindo os resultados.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Funcionamento da Listagem
+A listagem de perguntas é gerenciada pelo `QuizData`. Cada pergunta é apresentada em sequência, e ao clicar na resposta, o estado do componente é atualizado para refletir a próxima pergunta. A listagem das opções é feita através de um loop que gera botões para cada resposta.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Como Rodar a Aplicação
+Para rodar a aplicação, siga os passos abaixo:
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clone o repositório ou crie um novo projeto React:
+   ```bash
+   npx create-react-app quiz-app
+   cd quiz-app
