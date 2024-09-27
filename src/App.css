@@ -1,38 +1,64 @@
-.App {
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: url(img/c736c687ac4b40506ce1a46c5b9b6d06.jpg);
+  background-color: #eaeaea; /* Cor de fundo suave */
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
   text-align: center;
+  color: #fcfbff;
+  margin-bottom: 20px;
+  font-size: 2.5em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  color: #2980b9;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button {
+  background-color: #3498db;
   color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s; /* Efeito de transformação */
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+.question, .result {
+  background-color: white; /* Fundo branco */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+  margin: 0 auto 20px; /* Centralizar e espaçamento */
+  max-width: 600px; /* Largura máxima */
+}
+
+.result {
+  text-align: center; /* Centralizar texto */
+}
+
+@media (max-width: 600px) {
+  h1 {
+      font-size: 1.8em; /* Ajustar tamanho do título em telas pequenas */
   }
 }
