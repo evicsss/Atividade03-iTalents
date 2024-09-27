@@ -21,16 +21,18 @@ const App = () => {
 
     return (
         <div>
-            <h1>HeroQuest</h1>
+            <h1>QuizHero</h1>
             {quizFinished ? (
                 <ResultComponent score={score} totalQuestions={quizData.length} />
             ) : (
                 <QuestionComponent
                     question={quizData[currentQuestion]}
                     handleAnswer={handleAnswer}
-                />
-            )}
-        </div>
+                    >
+                        <p className='centralizado'>Pense bem antes de responder!</p>
+                    </QuestionComponent>
+                )}
+            </div>
     );
 };
 

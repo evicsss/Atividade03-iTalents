@@ -1,6 +1,6 @@
 import React from 'react';
 
-const QuestionComponent = ({ question, handleAnswer }) => {
+const QuestionComponent = ({ question, handleAnswer, children  }) => {
     return (
         <div className="question">
             <h2>{question.question}</h2>
@@ -13,6 +13,7 @@ const QuestionComponent = ({ question, handleAnswer }) => {
                     </li>
                 ))}
             </ul>
+            {children} 
         </div>
     );
 };

@@ -9,30 +9,30 @@ body {
 
 h1 {
   text-align: center;
-  color: #fcfbff;
+  color: #ffffff;
   margin-bottom: 20px;
   font-size: 2.5em;
 }
 
 h2 {
-  color: #2980b9;
+  color: #6c29b9;
   margin-bottom: 10px;
 }
 
 button {
-  background-color: #3498db;
+  background-color: #c507ffd2;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s, transform 0.2s; /* Efeito de transformação */
+  transition: background-color 0.3s, transform 0.2s; 
 }
 
 button:hover {
-  background-color: #2980b9;
-  transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+  background-color: #390141;
+  transform: scale(1.05); 
 }
 
 ul {
@@ -44,21 +44,28 @@ li {
   margin: 10px 0;
 }
 
-.question, .result {
-  background-color: white; /* Fundo branco */
-  border-radius: 10px; /* Bordas arredondadas */
-  padding: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
-  margin: 0 auto 20px; /* Centralizar e espaçamento */
-  max-width: 600px; /* Largura máxima */
+.centralizado {
+  text-align: center; 
+  color: #6c29b9;
 }
 
+
+.question, .result {
+  background-color: white; 
+  border-radius: 10px; 
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+  margin: 0 auto 20px; 
+  max-width: 600px;
+}
+
+
 .result {
-  text-align: center; /* Centralizar texto */
+  text-align: center; 
 }
 
 @media (max-width: 600px) {
   h1 {
       font-size: 1.8em; /* Ajustar tamanho do título em telas pequenas */
   }
-}
+};
